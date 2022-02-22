@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.webService.name }}
+  labels:
+    {{- include "dengalo-app.labels" . | nindent 4 }}-web
+spec:
+  type: {{ .Values.webService.type }}
+  externalIPs:
+  - 172.17.0.31
+  ports:
+    - port: {{ .Values.webService.port }}
+      targetPort: 80
+      name: http
+  selector:
+    {{- include "dengalo-app.selectorLabels" . | nindent 4 }}
+    apptype: web

@@ -2,25 +2,25 @@
 replicaCount: 1
 
 webimage:
-  repository: registry.gitlab.com/containerization-team/tier1-microservices/web/nginx_denglo
+  repository: registry.gitlab.com/containerization-team/tier1-microservices/web/nginx_optsvc
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
 webService:
-  name: denglo-nginx-service
+  name: optsvc-nginx-service
   type: NodePort
   port: 80
 
 
 appimage:
-  repository: registry.gitlab.com/containerization-team/tier1-microservices/web/liberty_denglo
+  repository: registry.gitlab.com/containerization-team/tier1-microservices/web/liberty_optsvc
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
 appService:
-  name: denglo-liberty-service
+  name: optsvc-liberty-service
   type: ClusterIP
   port: 9080
   targetPort: 9080
