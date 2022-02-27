@@ -11,7 +11,7 @@ spec:
   selector:
     matchLabels:
       {{- include "dengalo-app.selectorLabels" . | nindent 6 }}
-      apptype: application
+      apptype: app
   strategy:
     rollingUpdate:
       maxSurge: 25%
